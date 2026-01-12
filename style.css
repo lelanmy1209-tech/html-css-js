@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins;
+}
+
+a {
+  text-decoration: none;
+}
+
+#header {
+  background: #fffcf4;
+}
+
+#header .body {
+  display: flex;
+}
+
+#header .main-content {
+  width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
+  margin: 0 auto;
+}
+
+/* margin: top right bottom left: shorthand
+   vd: margin: 10px 20px 1-px 20px
+       margin: 10px ( top)  20px(left + right) 10px (bottom)
+       margin: 10px ( top + bottom) 20px ( r-l)
+       margin: 10px ( t-r-b-l)
+
+   margin-top: 10px
+   margin-right: 20px --> longhand
+*/
+
+#header .nav-bar li {
+  color: #5f5b53;
+  text-align: center;
+  font-size: 16px;
+  margin-right: 42px;
+}
+
+#header .nav-bar ul {
+  display: flex;
+}
+
+#header .nav-bar {
+  margin-left: auto;
+  /* chiếm phần bên trái nên chữ giật qua bên phải */
+}
+
+#header .nav-bar .active {
+  font-weight: bold;
+  color: #171100;
+  position: relative;
+}
+
+/* pseudo elemtn: ptu giả
+   ptu k có thức, nằm trong ptu đang tác động
+*/
+#header .nav-bar .active::after {
+  content: "";
+  width: 12px;
+  height: 2px;
+  border-radius: 1px;
+  background: #171100;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* positon: 
+   relative ( td đối ) 
+   absolute ( tuyệt đối): sẽ lấy ptu cha có position relative lm gốc tọa độ*/
