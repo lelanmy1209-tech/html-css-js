@@ -1,77 +1,391 @@
-* {
-  box-sizing: border-box;
+*{
+      box-sizing: border-box;
+}
+body{
+      font-family: Poppins;
 }
 
-body {
-  font-family: Poppins;
+a{
+      text-decoration: none;
 }
 
-a {
-  text-decoration: none;
+/* Common CSS */
+
+.main-content{
+      width: 1170px;
+      margin: 0 auto;
 }
+
+.btn{
+      color: #FFF;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 24.5px;
+      background: #171100;
+      min-width: 144px;
+      line-height: 48px;
+      padding-left: 16px;
+      padding-right: 16px;
+      border: 0;
+      cursor: pointer;
+      margin-left: 28px;
+}
+
+
+/* Phần header */
 
 #header {
-  background: #fffcf4;
+      background: #FFFCF4;
 }
 
-#header .body {
-  display: flex;
+#header .body{
+      display:flex;
+      align-items: center;
+      padding-top: 36px;
+      padding-bottom: 36px;
 }
 
-#header .main-content {
-  width: 1170px;
-  margin-right: auto;
-  margin-left: auto;
-  margin: 0 auto;
+#header .nav-bar{
+      color: #5F5B53;
+      text-align: center;
+      font-size: 16px;
 }
 
-/* margin: top right bottom left: shorthand
-   vd: margin: 10px 20px 1-px 20px
-       margin: 10px ( top)  20px(left + right) 10px (bottom)
-       margin: 10px ( top + bottom) 20px ( r-l)
-       margin: 10px ( t-r-b-l)
-
-   margin-top: 10px
-   margin-right: 20px --> longhand
-*/
-
-#header .nav-bar li {
-  color: #5f5b53;
-  text-align: center;
-  font-size: 16px;
-  margin-right: 42px;
+#header .nav-bar ul{
+      display: flex;
 }
 
-#header .nav-bar ul {
-  display: flex;
+#header .nav-bar{
+      margin-left: auto;
 }
 
-#header .nav-bar {
-  margin-left: auto;
-  /* chiếm phần bên trái nên chữ giật qua bên phải */
+#header .nav-bar .active{
+      color: #171100;
+      font-weight: 600;
+      position: relative;
 }
 
-#header .nav-bar .active {
-  font-weight: bold;
+/* PSEUDO  */
+
+#header .nav-bar .active::after{
+      content: "";
+      width: 12px;
+      height: 2px;
+      border-radius: 1px;
+      background: #171100;
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+}
+
+#header .nav-bar a:hover{
+      text-shadow: 1px 0 currentColor;
+      color: #171100;
+}
+
+
+/* Phần hero */
+
+#hero {
+      background: #FFFCF4;
+      padding-bottom: 64px;
+      margin-bottom: 200px;
+}
+
+#hero  .body{
+      background: #FFFCF4;
+      display: flex;
+}
+
+#hero .col-left .img-guy-lesson{
+      width: 470px;
+      height: 685px;
+}
+
+#hero .col-left{
+      position: relative;
+      width: 40%;
+}
+
+#hero .col-left .stats{
+      width: 270px;
+      height: 244px;
+      border-radius: 12px;
+      background: #FFF;
+      box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.05);
+      padding-top: 28px;
+      padding-bottom: 28px;
+      padding-left: 24px;
+      padding-right: 24px;
+      position: absolute;
+      top: 393px;
+      left: 300px;
+}
+
+#hero .stats .item{
+      display: flex;
+      align-items: center;
+      margin-bottom: 14px;
+}
+
+#hero .stats .item:last-child {
+  margin-bottom: 0;
+}
+
+
+#hero .stats img {
+  margin-right: 16px;
+}
+
+#hero .stats .item-info p:first-child{
+      color: #5f5b53;
+      font-size: 14px;
+      line-height: 26px;
+}
+
+#hero .stats .item-info p:last-child {
   color: #171100;
-  position: relative;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 30px;
 }
 
-/* pseudo elemtn: ptu giả
-   ptu k có thức, nằm trong ptu đang tác động
-*/
-#header .nav-bar .active::after {
-  content: "";
-  width: 12px;
-  height: 2px;
-  border-radius: 1px;
-  background: #171100;
-  display: inline-block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+
+/* PHẦN col-right */
+
+#hero .col-right{
+      width: 60%;
+      padding-left: 230px;
+      padding-top: 46px;
 }
 
-/* positon: 
-   relative ( td đối ) 
-   absolute ( tuyệt đối): sẽ lấy ptu cha có position relative lm gốc tọa độ*/
+#hero .col-right .title{
+      color: #171100;
+      font-family: Sen;
+      font-size: 58px;
+      font-weight: 700;
+      line-height: 68px; /* 117.241% */
+      letter-spacing: -1.16px;
+}
+
+#hero .col-right .desc{
+      color: #5F5B53;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 30px; /* 166.667% */
+      margin-top: 28px;
+      margin-bottom: 38px;
+}
+
+#hero .col-right .cta-group{
+      display: flex;
+}
+
+#hero .col-right .cta-group .btn-see-course{
+      width: 180px;
+      height: 64px;
+      border-radius: 32px;
+      background: #FFB900;
+      margin-left: 0;
+}
+
+#hero .col-right .cta-group .btn-watch-video{
+      color: #171100;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 30px; /* 166.667% */
+      border: 0;
+      background: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+}
+
+#hero .col-right .cta-group .btn-watch-video img{
+      width: 40px;
+      height: 40px;
+      margin-left: 28px;
+      margin-right: 14px;
+}
+
+#hero .col-right .recent-engagement{
+      margin-top: 48px;
+      margin-bottom: 8px;
+}
+
+#hero .col-right .stat{
+      display: flex;
+}
+
+#hero .col-right .stat p{
+      color: #5F5B53;
+      font-size: 18px;
+      line-height: 30px;
+}
+
+#hero .col-right .stat strong{
+      color: #171100;
+      font-family: Sen;
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 54px; /* 122.727% */
+}
+
+#hero .col-right .stat p:first-child{
+      margin-right: 28px;
+}
+
+
+/* OUR POPULAR COURSE */
+
+
+/* #popular-courses .khung{
+      width: 1170px;
+      margin: 0 auto;
+      background: #FFF;
+} */
+
+#popular-courses .course-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+}
+
+
+
+#popular-courses .course-header h2{
+      color: #171100;
+      font-family: Sen;
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 48px; /* 126.316% */
+      letter-spacing: -0.76px;
+      /* margin-bottom: 16px; */
+      margin: 0;
+}
+
+#popular-courses .course-header img{
+      width: 98px;
+      height: 40px;
+      cursor: pointer;
+      margin-top: 42px;
+}
+
+#popular-courses .desc {
+  margin-top: 16px;
+}
+
+.course-header p{
+      width: 458px;
+      color: #5F5B53;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 30px; /* 166.667% */
+      margin-bottom: 55px;
+}
+
+
+/* #popular-courses .course-header .next {
+      width: 98px;
+      height: 40px;
+      margin-left: auto;
+      margin-bottom: 97px;
+      border: 0px;
+      background: none ;
+      padding: 0;
+      padding-top: 42px;
+} */
+
+
+.stats-group {
+      display: flex;
+      gap: 30px;  
+      padding-bottom: 200px; 
+}
+
+
+#popular-courses .stats-group .goi{
+      min-width: 370px;
+      min-height: 466px;
+      border-radius: 12px;
+      background: #FFF;
+      box-shadow: 0 18px 36px 0 rgba(0, 0, 0, 0.05);
+}
+
+
+/* #popular-courses .stats-group .goi:first-child{
+      margin-right: 30px;
+}
+
+#popular-courses .stats-group .goi:last-child{
+      margin-left: 30px;
+} */
+
+
+#popular-courses .stats-group .mix{
+      display: flex;
+      align-items: center;
+}
+#popular-courses .stats-group .mix .SAO{
+      margin-top: 17px;
+      margin-left: 119px;
+      margin-right: 22px;
+}
+
+#popular-courses .stats-group .mix .text{
+      color: #171100;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 30px; /* 166.667% */
+      margin-top: 16px;
+      margin-left: 22px;
+      margin-bottom: 6px;
+}
+
+#popular-courses .stats-group .P{
+      color: #5F5B53;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 26px; /* 185.714% */
+      margin-left: 22px;
+      margin-right: 22px;
+}
+
+#popular-courses .stats-group .row .tien{
+      margin-top: 22px;
+      color: #171100;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 30px; /* 166.667% */
+      padding-left: 22px;
+}
+
+#popular-courses .stats-group .IMG{
+      width: 370px;
+      height: 278px;
+      border-radius: 12px 12px 0 0;
+      background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+}
+
+#popular-courses .stats-group .row .btn{
+      /* width: 118px;
+      height: 50px; */
+      cursor: pointer;
+      align-items: center;
+      border-radius: 25px;
+      background: #171100;
+      padding-right: 22px;
+      margin-top: 12px;
+      margin-left: 119px;
+}
+
+#popular-courses .stats-group .row .btn-book-now1{
+      border-radius: 25px;
+      background: #FFB900;
+}
+
+#popular-courses .stats-group .row{
+      display: flex;
+}
